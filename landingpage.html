@@ -83,15 +83,23 @@
         <p>Please select your role to continue</p>
 
         <button class="role-btn customer" onclick="gotocustomerloginpage()">Customer</button>
-        <button class="role-btn seller">Seller</button>
-        <button class="role-btn admin">Admin</button>
+        <button class="role-btn seller" onclick="gotoseller_login_page()">Seller</button>
+        <button class="role-btn admin" onclick="gotoadmin_login_page()">Admin</button>
     </div>
 
 </body>
 <script>
      function gotocustomerloginpage()
      {
-        window.location.href = "loginpage.html";
+        window.location.href = "Customer/loginpage.html";
+     }
+     function gotoseller_login_page()
+     {
+        window.location.href = "seller/seller_login_page.html";
+     }
+     function gotoadmin_login_page()
+     {
+        window.location.href = "Admin/Admin_login_page.html";
      }
 </script>
 </html>

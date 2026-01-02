@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1f2933, #3b82f6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: #ffffff;
+            width: 380px;
+            padding: 35px 30px;
+            border-radius: 18px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #1f2933;
+        }
+
+        .login-container p {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            font-size: 14px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 13px;
+            background: #22c55e;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background: #16a34a;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .footer-text span {
+            color: #3b82f6;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .footer-text span:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <p>Login as a Admin</p>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="customer@email.com">
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="********">
+        </div>
+
+        <button class="login-btn" onclick="loginCustomer()">Login</button>
+
+        <div class="footer-text">
+            Don’t have an account?
+            <span onclick="gotosignupage()">Create new account</span>
+        </div>
+    </div>
+
+    <script>
+        function loginCustomer() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (email === "" || password === "") {
+                alert("Please enter email and password");
+                return;
+            }
+
+            // Demo login redirect
+            window.location.href = "customer-dashboard.html";
+        }
+
+        function gotosignupage() {
+            window.location.href = "Admin_signup_page.html";
+        }
+    </script>
+
+</body>
+</html>
