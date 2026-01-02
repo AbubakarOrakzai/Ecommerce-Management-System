@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce | Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: #f3f4f6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: linear-gradient(135deg, #1f2933, #3b82f6);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .navbar h2 {
+            font-size: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-links input {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* PAGE TITLE */
+        .page-title {
+            text-align: center;
+            margin: 30px 0;
+            color: #1f2933;
+        }
+
+        .page-title p {
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        /* PRODUCT GRID */
+        .products {
+            padding: 0 30px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            padding: 18px;
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            color: #1f2933;
+            margin-bottom: 6px;
+        }
+
+        .price {
+            font-size: 15px;
+            color: #16a34a;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .product-card button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: #3b82f6;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h2>E-Commerce Store</h2>
+
+        <div class="nav-links">
+            <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProduct()">
+            <a href="customer-dashboard.html">Dashboard</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+        <h2>Featured Products</h2>
+        <p>Browse our latest collection</p>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="products">
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200">
+            <h3 class="product-name">Wireless Headphones</h3>
+            <div class="price">Rs. 4,500</div>
+            <button>View Product</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200">
+            <h3 class="product-name">Smart Watch</h3>
+            <div class="price">Rs. 6,200</div>
+            <button>View Product</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200">
+            <h3 class="product-name">Mobile Phone</h3>
+            <div class="price">Rs. 32,000</div>
+            <button>View Product</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200">
+            <h3 class="product-name">Laptop Bag</h3>
+            <div class="price">Rs. 2,800</div>
+            <button>View Product</button>
+        </div>
+
+    </div>
+
+    <!-- SEARCH SCRIPT -->
+    <script>
+        function searchProduct() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let products = document.getElementsByClassName("product-card");
+
+            for (let i = 0; i < products.length; i++) {
+                let name = products[i]
+                    .getElementsByClassName("product-name")[0]
+                    .innerText.toLowerCase();
+
+                if (name.includes(input)) {
+                    products[i].style.display = "block";
+                } else {
+                    products[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

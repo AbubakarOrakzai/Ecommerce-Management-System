@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Management System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1f2933, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 380px;
+            padding: 35px 30px;
+            border-radius: 18px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: #1f2933;
+        }
+
+        .container p {
+            margin-bottom: 28px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .role-btn {
+            width: 100%;
+            padding: 13px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .customer {
+            background: #22c55e;
+            color: white;
+        }
+
+        .seller {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .admin {
+            background: #ef4444;
+            color: white;
+        }
+
+        .role-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>E-Commerce Management System</h1>
+        <p>Please select your role to continue</p>
+
+        <button class="role-btn customer" onclick="gotocustomerloginpage()">Customer</button>
+        <button class="role-btn seller">Seller</button>
+        <button class="role-btn admin">Admin</button>
+    </div>
+
+</body>
+<script>
+     function gotocustomerloginpage()
+     {
+        window.location.href = "loginpage.html";
+     }
+</script>
+</html>

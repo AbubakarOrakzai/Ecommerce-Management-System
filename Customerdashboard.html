@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: #f3f4f6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: linear-gradient(135deg, #1f2933, #3b82f6);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h2 {
+            font-size: 20px;
+        }
+
+        .navbar span {
+            font-size: 14px;
+        }
+
+        /* MAIN CONTAINER */
+        .dashboard {
+            padding: 30px;
+        }
+
+        /* SUMMARY CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 15px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1f2933;
+        }
+
+        /* SECTIONS */
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            margin-bottom: 15px;
+            color: #1f2933;
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f1f5f9;
+            color: #374151;
+        }
+
+        td {
+            color: #4b5563;
+        }
+
+        tr:not(:last-child) {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .view { background: #3b82f6; }
+        .track { background: #22c55e; }
+        .cancel { background: #ef4444; }
+
+        /* GRID */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h2>E-Commerce Management System</h2>
+        <span>Welcome, Ali Khan</span>
+    </div>
+
+    <div class="dashboard">
+
+        <!-- OVERVIEW -->
+        <div class="cards">
+            <div class="card">
+                <h3>Total Orders</h3>
+                <p>5</p>
+            </div>
+            <div class="card">
+                <h3>Active Orders</h3>
+                <p>2</p>
+            </div>
+            <div class="card">
+                <h3>Delivered Orders</h3>
+                <p>3</p>
+            </div>
+            <div class="card">
+                <h3>Cart Items</h3>
+                <p>4</p>
+            </div>
+            <div class="card">
+                <h3>Pending Payments</h3>
+                <p>RS 12,000</p>
+            </div>
+            <div class="card">
+                <h3>Notifications</h3>
+                <p>3</p>
+            </div>
+        </div>
+
+        <!-- RECENT ORDERS -->
+        <div class="section">
+            <h3>Recent Orders</h3>
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>0101</td>
+                    <td>01-10-2025</td>
+                    <td>Delivered</td>
+                    <td>Paid</td>
+                    <td>
+                        <button class="btn view">View</button>
+                        <button class="btn track">Track</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>0102</td>
+                    <td>02-10-2025</td>
+                    <td>Shipped</td>
+                    <td>Paid</td>
+                    <td>
+                        <button class="btn view">View</button>
+                        <button class="btn track">Track</button>
+                        <button class="btn cancel">Cancel</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CART & WISHLIST -->
+        <div class="grid-2">
+            <div class="section">
+                <h3>Shopping Cart</h3>
+                <p>Items in Cart: <strong>4</strong></p>
+                <p>Total Value: <strong>RS 18,500</strong></p>
+                <button class="btn view" style="margin-top:10px;">Go to Cart</button>
+            </div>
+
+            <div class="section">
+                <h3>Wishlist</h3>
+                <ul>
+                    <li>Mobile Phone – In Stock</li>
+                    <li>Laptop – Price Dropped</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PAYMENTS & REVIEWS -->
+        <div class="grid-2">
+            <div class="section">
+                <h3>Payments & Transactions</h3>
+                <p>Last Payment: RS 12,000 (Card)</p>
+                <p>Status: Paid</p>
+            </div>
+
+            <div class="section">
+                <h3>Reviews & Ratings</h3>
+                <p>Reviews Given: 2</p>
+                <p>Pending Reviews: 1</p>
+            </div>
+        </div>
+
+        <!-- PROFILE & NOTIFICATIONS -->
+        <div class="grid-2">
+            <div class="section">
+                <h3>Profile & Address</h3>
+                <p>Email: ali@gmail.com</p>
+                <p>Phone: 0301-1234567</p>
+                <p>Address: Lahore</p>
+            </div>
+
+            <div class="section">
+                <h3>Notifications</h3>
+                <ul>
+                    <li>Your order #0102 has been shipped</li>
+                    <li>New discount coupon available</li>
+                    <li>Refund processed successfully</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
