@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | E-Commerce</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #1f2933, #3b82f6);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+/* PAGE TITLE */
+.page-title {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.page-title h2 {
+    color: #1f2933;
+}
+
+.page-title p {
+    color: #6b7280;
+}
+
+/* CONTACT CONTAINER */
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 30px;
+}
+
+/* CONTACT INFO */
+.contact-info {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    margin-bottom: 15px;
+    color: #1f2933;
+}
+
+.contact-info p {
+    color: #6b7280;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* FORM */
+.contact-form {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 120px;
+}
+
+.send-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #3b82f6;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background: #2563eb;
+}
+ .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f3f4f6;
+            padding: 8px;
+        }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+     <div class="logo-container">
+            <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo">
+        </div>
+    <h2>E-Commerce Store</h2>
+    <div>
+        <a href="homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<!-- TITLE -->
+<div class="page-title">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="contact-container">
+
+    <!-- CONTACT INFO -->
+    <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <h3>Abubakar Orakzai</h3>
+        <p><b>Email:</b> abubakarorakzai15@gmail.com</p>
+        <p><b>github:</b> <a href="https://github.com/AbubakarOrakzai">https://github.com/AbubakarOrakzai</a></p>
+        <p><b>Address:</b> Lahore, Pakistan</p>
+        <h3>Areeba Mehboob</h3>
+        <p><b>Email:</b> s202426024@umt.edu.pk</p>
+       
+        <p><b>Address:</b> Lahore, Pakistan</p>
+        <p>
+            Feel free to contact us if you have any complaints, issues, or concerns related to the website or any seller. <br>
+             We value your feedback and are committed to resolving problems as quickly as possible to ensure a safe, reliable, and <br>
+              smooth user experience for everyone. <br>
+        </p>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form">
+        <h3>Send a Message</h3>
+
+        <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Subject">
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Write your message..."></textarea>
+        </div>
+
+        <button class="send-btn" onclick="sendMessage()">Send Message</button>
+    </div>
+
+</div>
+
+<script>
+function sendMessage() {
+    alert("Message sent successfully (Demo)");
+}
+</script>
+
+</body>
+</html>

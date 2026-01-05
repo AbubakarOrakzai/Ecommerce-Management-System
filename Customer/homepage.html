@@ -27,7 +27,7 @@ body {
     color: white;
 }
 
-.logo {
+.logo-name {
     font-size: 22px;
     font-weight: 600;
 }
@@ -195,6 +195,65 @@ body {
 .home-btn:hover {
     background: #2563eb;
 }
+
+
+/* FOOTER  Css section */
+.footer {
+    background: #1f2933;
+    color: #e5e7eb;
+    padding: 40px 30px 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.footer h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.footer p, 
+.footer a {
+    font-size: 14px;
+    color: #d1d5db;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.footer a:hover {
+    color: #3b82f6;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #374151;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f3f4f6;
+            padding: 8px;
+        }
+
+
+
 </style>
 </head>
 
@@ -202,10 +261,15 @@ body {
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <div class="logo">E-Commerce Store</div>
+
+  <div class="logo-container">
+            <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo">
+        </div>
+
+    <div class="logo-name">E-Commerce Store</div>
     <div class="nav-links">
         <a href="customer-dashboard.html">Dashboard</a>
-        <a href="#">About</a>
+        <a href="contact_us.html">About</a>
         <a href="#">Contact</a>
         <span class="cart-icon" onclick="toggleCart()">🛒 Cart (<span id="cartCount">0</span>)</span>
     </div>
@@ -258,16 +322,7 @@ onclick="Macbook_view_product('Macbook Air 2', 285000)">  <!-- calling function 
         </button>
     </div>
 
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300">
-        <div class="product-name">Laptop Bag</div>
-        <div class="price">2800</div>
-        <button onclick="addToCart('Laptop Bag', 2800)">Add to Cart</button>
-         <button class="view-btn" onclick="viewProduct('Mobile Phone', 32000)">
-            View Product
-        </button>
-    </div>
-
+  
 </div>
 
 <!-- CART PANEL -->
@@ -284,6 +339,69 @@ onclick="Macbook_view_product('Macbook Air 2', 285000)">  <!-- calling function 
     
 </div>
 
+<!--    ======================================The Footer section ======================================================-->
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- ABOUT -->
+        <div>
+            <h3>E-Commerce Store</h3>
+            <p>
+               The E-Commerce Management System has been developed under <br>
+               the supervision of Sir Riaz Ahmed with the aim of enhancing user experience in online shopping and <br>
+                providing a reliable platform for product-based companies in Pakistan. <br>
+            </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div>
+            <h3>Quick Links</h3>
+            <p><a href="homepage.html">Home</a></p>
+            <p><a href="customer-dashboard.html">Dashboard</a></p>
+            <p><a href="">About Us</a></p>
+            <p><a href="#">Contact</a></p>
+        </div>
+
+        <!-- SUPPORT -->
+        <div>
+            <h3>Support</h3>
+            <p>FAQ</p>
+            <p>Return Policy</p>
+            <p>Shipping Information</p>
+            <p>Privacy Policy</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div>
+            <!-- CONTACT -->
+<div>
+    <h3>Contact Us</h3>
+    <h4>GitHub</h4>
+    <p>
+        <a href="https://github.com/AbubakarOrakzai" target="_blank">
+            https://github.com/AbubakarOrakzai
+        </a>
+    </p>
+    <p>Email: <a href="mailto:abubakarorakzai15@gmail.com">abubakarorakzai15@gmail.com</a></p>
+    <p>Phone: <a href="tel:+923099652188">0309-9652188</a></p>
+    <p>Location: Pakistan</p>
+</div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 E-Commerce Store | University of Management and Technology  Project | All Rights Reserved
+    </div>
+</footer>
+
+
+
+<!--==================================================================================================================-->
 <script>
 let cart = [];
 let total = 0;

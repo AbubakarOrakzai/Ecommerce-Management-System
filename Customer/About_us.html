@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | E-Commerce</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #1f2933, #3b82f6);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+/* PAGE HEADER */
+.header {
+    text-align: center;
+    padding: 60px 30px 40px;
+}
+
+.header h2 {
+    color: #1f2933;
+    font-size: 32px;
+}
+
+.header p {
+    color: #6b7280;
+    max-width: 700px;
+    margin: 10px auto 0;
+}
+
+/* CONTENT */
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 30px;
+}
+
+.about-card {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.about-card h3 {
+    color: #1f2933;
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    color: #6b7280;
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+/* HIGHLIGHTS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-box {
+    background: #f9fafb;
+    padding: 18px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.stat-box h4 {
+    color: #3b82f6;
+    font-size: 22px;
+}
+
+.stat-box p {
+    color: #6b7280;
+    font-size: 13px;
+}
+ .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f3f4f6;
+            padding: 8px;
+        }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+      <div class="logo-container">
+            <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo">
+        </div> 
+    <h2>E-Commerce Store</h2>
+    <div>
+        <a href="homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+    <h2>About Our Store</h2>
+    <p>
+        This project represents a modern E-commerce Management System designed
+        for efficient product management, user interaction, and business growth.
+    </p>
+</div>
+
+<!-- ABOUT CONTENT -->
+<div class="about-container">
+
+    <!-- CARD 1 -->
+    <div class="about-card">
+        <h3>Who We Are</h3>
+        <p>
+            We are a demo e-commerce platform developed as part of a university project.
+            Our aim is to demonstrate how online shopping systems operate with
+            customers, sellers, and administrators working together in a single system.
+        </p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="about-card">
+        <h3>Our Mission</h3>
+        <p>
+            Our mission is to provide a clear understanding of an e-commerce
+            architecture by showcasing product listings, dashboards, carts,
+            order flow, and management panels in a clean and user-friendly interface.
+        </p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="about-card">
+        <h3>Why This Project</h3>
+        <p>
+            This system is built to meet academic requirements while following
+            real-world design practices. It focuses on usability, modularity,
+            and future backend integration for real-time data handling.
+        </p>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h4>3+</h4>
+                <p>User Roles</p>
+            </div>
+            <div class="stat-box">
+                <h4>10+</h4>
+                <p>Core Modules</p>
+            </div>
+            <div class="stat-box">
+                <h4>100%</h4>
+                <p>Frontend Demo</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

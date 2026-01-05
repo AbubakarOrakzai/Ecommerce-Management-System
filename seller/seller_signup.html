@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Signup</title>
+    <title>Seller Signup</title>
 
     <style>
         * {
@@ -14,11 +14,11 @@
         }
 
         body {
-             background-image: url('/assets/warehouse.jpg');
-            background-repeat: no-repeat;   
-             background-position: center;    
+            background-image: url('/assets/warehouse.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
             background-size: cover;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -27,11 +27,27 @@
         .signup-container {
             background: #ffffff;
             width: 380px;
-            padding: 25px 28px;
+            padding: 28px 30px;
             border-radius: 18px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.25);
             max-height: 90vh;
             overflow-y: auto;
+        }
+
+        /* Logo */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f3f4f6;
+            padding: 8px;
         }
 
         .signup-container h2 {
@@ -95,92 +111,106 @@
             color: #6b7280;
         }
 
-        .footer-text a {
+        .footer-text span {
             color: #3b82f6;
-            text-decoration: none;
             font-weight: 600;
+            cursor: pointer;
         }
 
-    .footer-text span {
-    color: #3b82f6;
-    font-weight: 600;
-    cursor: pointer;
-}
+        .footer-text span:hover {
+            text-decoration: underline;
+        }
+         .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
 
-.footer-text span:hover {
-    text-decoration: underline;
-}
-
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f3f4f6;
+            padding: 8px;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="signup-container">
+ <div class="logo-container">
+            <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo">
+        </div>
+
         <h2>Create Account</h2>
         <p>Register as a Seller</p>
 
         <div class="form-group">
-            <label>Full Name</label>
+            <label for="name">Full Name</label>
             <input type="text" id="name" placeholder="Ali Khan">
         </div>
 
         <div class="form-group">
-            <label>Email</label>
+            <label for="email">Email</label>
             <input type="email" id="email" placeholder="ali@gmail.com">
         </div>
 
         <div class="form-group">
-            <label>Phone</label>
+            <label for="phone">Phone</label>
             <input type="text" id="phone" placeholder="0301-1234567">
         </div>
 
         <div class="form-group">
-            <label>Address</label>
+            <label for="address">Address</label>
             <input type="text" id="address" placeholder="Lahore">
         </div>
 
         <div class="form-group">
-            <label>Password</label>
+            <label for="password">Password</label>
             <input type="password" id="password" placeholder="********">
         </div>
 
         <div class="form-group">
-            <label>Confirm Password</label>
+            <label for="confirmPassword">Confirm Password</label>
             <input type="password" id="confirmPassword" placeholder="********">
         </div>
 
-        <button class="signup-btn" onclick="signupCustomer()">Create Account</button>
-<div class="footer-text">
+        <button class="signup-btn" onclick="signupSeller()">Create Account</button>
+
+        <div class="footer-text">
             Already have an account?
-            <span onclick="gotologinpage()">Login</span>
+            <span onclick="goToLogin()">Login</span>
         </div>
+
     </div>
 
     <script>
-        function gotologinpage() {
+        function goToLogin() {
             window.location.href = "seller_login_page.html";
         }
-        function signupCustomer() {
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let phone = document.getElementById("phone").value;
-            let address = document.getElementById("address").value;
-            let password = document.getElementById("password").value;
-            let confirmPassword = document.getElementById("confirmPassword").value;
+
+        function signupSeller() {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
 
             if (!name || !email || !phone || !address || !password || !confirmPassword) {
-                alert("Please fill all fields");
+                alert("Please fill in all fields.");
                 return;
             }
 
             if (password !== confirmPassword) {
-                alert("Passwords do not match");
+                alert("Passwords do not match.");
                 return;
             }
 
             alert("Account created successfully!");
-            window.location.href = "customer-login.html";
+            window.location.href = "seller_login_page.html";
         }
     </script>
 
