@@ -231,28 +231,29 @@ body {
         <div class="price">Rs. 285,000 </div>
         <button onclick="addToCart('Dell precision 5570', 115000)">Add to Cart</button>
     <button class="view-btn"
-onclick="viewProduct('Macbook Air 2', 285000)">
+
+onclick="Macbook_view_product('Macbook Air 2', 285000)">  <!-- calling function to land to the page where the macbook information -->
     View Product
 </button>
        
     </div>
 
     <div class="product-card">
-        <img src="https://via.placeholder.com/300">
-        <div class="product-name">Smart Watch</div>
-        <div class="price">6200</div>
+        <img src="/assets/Apple Watch series 9.jfif">
+        <div class="product-name">Apple Watch Series 9</div>
+        <div class="price">Rs 95,000</div>
         <button onclick="addToCart('Smart Watch', 6200)">Add to Cart</button>
-         <button class="view-btn" onclick="viewProduct('Mobile Phone', 32000)">
+         <button class="view-btn" onclick="Apple_watch_viewProduct('Apple Watch Series 9', 95,000)">
             View Product
         </button>
     </div>
 
     <div class="product-card">
-        <img src="https://via.placeholder.com/300">
-        <div class="product-name">Mobile Phone</div>
-        <div class="price">32000</div>
-        <button onclick="addToCart('Mobile Phone', 32000)">Add to Cart</button>
-        <button class="view-btn" onclick="viewProduct('Mobile Phone', 32000)">
+        <img src="/assets/head_phone.png">
+        <div class="product-name">Sumsung Ulter Pro Wireless</div>
+        <div class="price">50,000</div>
+        <button onclick="addToCart('Sumung Ulter Pro Wireless', 109,999)">Add to Cart</button>
+        <button class="view-btn" onclick="head_phone_product_viewProduct('Mobile Phone', 32000)">
             View Product
         </button>
     </div>
@@ -324,12 +325,25 @@ function goBackHome() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* VIEW PRODUCT FUNCTION */
-function viewProduct(name, price) {
+/*======================================================== VIEW PRODUCT FUNCTION ==========================================*/
+function Macbook_view_product(name, price) {
     window.location.href =
-        "view_product.html?name=" + encodeURIComponent(name) +
+        "Macbook_view_product.html?name=" + encodeURIComponent(name) +
         "&price=" + price;
 }
+
+function Macbook_view_product(name, price) {
+    window.location.href =
+        "Macbook_view_product.html?name=" + encodeURIComponent(name) +
+        "&price=" + price;
+}
+function head_phone_product_viewProduct(name,price)
+{
+      window.location.href =
+        "head_phone_product.html?name=" + encodeURIComponent(name) +
+        "&price=" + price;
+}
+
 
 
 </script>

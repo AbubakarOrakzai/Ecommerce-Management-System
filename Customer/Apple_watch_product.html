@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Product</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #1f2933, #3b82f6);
+    padding: 15px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar button {
+    background: white;
+    color: #1f2933;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* CONTAINER */
+.product-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+/* IMAGE SECTION */
+.product-image {
+    flex: 1;
+}
+
+.main-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnails img {
+    width: 70px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnails img:hover {
+    border-color: #3b82f6;
+}
+
+/* DETAILS */
+.product-details {
+    flex: 1;
+}
+
+.product-details h2 {
+    color: #1f2933;
+    margin-bottom: 5px;
+}
+
+/* RATING */
+.rating {
+    color: #f59e0b;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.rating-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 22px;
+    color: #16a34a;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.add-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.home-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-btn:hover { background: #16a34a; }
+.home-btn:hover { background: #2563eb; }
+
+/* REVIEWS */
+.reviews-section {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.reviews-section h3 {
+    margin-bottom: 20px;
+    color: #1f2933;
+}
+
+.review-card {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px 0;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+./* RATING */
+.rating-box {
+    margin-bottom: 15px;
+}
+
+.stars span {
+    font-size: 24px;
+    cursor: pointer;
+    color: #d1d5db;
+}
+
+.stars span.active {
+    color: #f59e0b;
+}
+
+.rating-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+
+.review-text {
+    margin-top: 8px;
+    color: #4b5563;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>E-Commerce Store</h2>
+    <button onclick="goHome()">Home</button>
+</div>
+
+<!-- PRODUCT -->
+<div class="product-container">
+
+    <!-- Image for watch -->
+     
+      <div class="product-image">
+        <img id="mainImage" src="/assets/Apple Watch series 9.jfif" class="main-image">
+
+        <div class="thumbnails">
+            <img src="/assets/apple_watch_in_pink color.jpg" onclick="changeImage(this.src)">
+            <img src="/assets/Apple_in_black_watch.jfif" onclick="changeImage(this.src)">
+            <img src="/assets/Apple Watch series 9.jfif" onclick="changeImage(this.src)">
+        </div>
+    </div>
+    
+
+
+
+
+
+
+    <!-- DETAILS -->
+    <div class="product-details">
+        <h2 id="productName">Apple Watch Series 9 </h2>
+
+<!-- The below is the code for the rating  -->
+        <div class="rating-box">
+    <div class="stars">
+        <span onclick="rateProduct(1)">★</span>
+        <span onclick="rateProduct(2)">★</span>
+        <span onclick="rateProduct(3)">★</span>
+        <span onclick="rateProduct(4)">★</span>
+        <span onclick="rateProduct(5)">★</span>
+    </div>
+    <div class="rating-text" id="ratingText">
+        Click to rate this product
+    </div>
+</div>
+
+
+        <div class="price">Rs. 95,000</div>
+
+        <div class="description">
+             Processor & Performance <br>
+            Chip: Apple S9 SiP (System in Package) — Apple’s most powerful watch chip yet <br>
+            CPU: Dual-core 64-bit processor <br>
+            Neural Engine: 4-core (faster machine learning and Siri responses) <br>
+            Operating System: watchOS 10 (upgradeable) <br>
+        </div>
+
+        <div class="buttons">
+            <button class="add-btn" onclick="addToCart()">Add to Cart</button>
+            <button class="home-btn" onclick="goHome()">Buy Now</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- REVIEWS -->
+<div class="reviews-section">
+    <h3>Customer Reviews</h3>
+
+    <div class="review-card">
+        <div class="review-header">
+            <span>Ahmed • feb 2022</span>
+        </div>
+        <div class="review-text">
+             It have best battery timing 
+        </div>
+    </div>
+
+    <div class="review-card">
+        <div class="review-header">
+            <span>Laqman • January 2021 </span>
+        
+        </div>
+        <div class="review-text">
+            Great watch
+        </div>
+    </div>
+</div>
+
+<script>
+function changeImage(src) {
+    document.getElementById("mainImage").src = src;
+}
+
+function addToCart() {
+    alert("Product added to cart!");
+}
+
+function goHome() {
+    window.location.href = "homepage.html";
+}
+
+//     ==================Rating section ===================================
+
+let selectedRating = 0;
+
+function rateProduct(rating) {
+    selectedRating = rating;
+
+    const stars = document.querySelectorAll(".stars span");
+    stars.forEach((star, index) => {
+        if (index < rating) {
+            star.classList.add("active");
+        } else {
+            star.classList.remove("active");
+        }
+    });
+
+    document.getElementById("ratingText").innerText =
+        "You rated this: " + rating + " / 5";
+}
+</script>
+
+</body>
+</html>
