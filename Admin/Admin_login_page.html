@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <title>Customer Login</title>
 
     <style>
         * {
@@ -14,22 +14,40 @@
         }
 
         body {
-              background-image: url('/assets/warehouse.jpg');
+            background-image: url('/assets/warehouse.jpg');
             background-repeat: no-repeat;
-    background-position: center;    
-      background-size: cover;
-            height: 100vh;
+            background-position: center;
+            background-size: cover;
+
+            min-height: 100vh;             /* ✅ FIX */
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;                 /* ✅ FIX */
         }
 
         .login-container {
             background: #ffffff;
-            width: 380px;
+            width: 100%;
+            max-width: 380px;              /* ✅ FIX */
             padding: 35px 30px;
             border-radius: 18px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f3f4f6;
+            padding: 8px;
         }
 
         .login-container h2 {
@@ -102,19 +120,17 @@
         .footer-text span:hover {
             text-decoration: underline;
         }
-         .logo-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 12px;
-        }
 
-        .logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #f3f4f6;
-            padding: 8px;
+        /* EXTRA SAFETY FOR SMALL HEIGHT SCREENS */
+        @media (max-height: 600px) {
+            .login-container {
+                padding: 25px 20px;
+            }
+
+            .logo {
+                width: 65px;
+                height: 65px;
+            }
         }
     </style>
 </head>
@@ -122,13 +138,13 @@
 <body>
 
     <div class="login-container">
-        
- <div class="logo-container">
+
+        <div class="logo-container">
             <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo">
         </div>
 
         <h2>Admin Login</h2>
-        <p>Login as a Admin</p>
+        <p>Login as admin</p>
 
         <div class="form-group">
             <label>Email</label>
@@ -150,20 +166,20 @@
 
     <script>
         function loginCustomer() {
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
 
             if (email === "" || password === "") {
                 alert("Please enter email and password");
                 return;
             }
 
-            // Demo login redirect
+            // Demo redirect
             window.location.href = "customer-dashboard.html";
         }
 
         function gotosignupage() {
-            window.location.href = "Admin_signup_page.html";
+            window.location.href = "customer_signup.html";
         }
     </script>
 

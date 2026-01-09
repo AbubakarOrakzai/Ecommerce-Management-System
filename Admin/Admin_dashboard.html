@@ -22,9 +22,15 @@
             background: linear-gradient(135deg, #1f2933, #3b82f6);
             padding: 15px 30px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             color: white;
+        }
+
+        nav .left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         nav h2 {
@@ -41,6 +47,15 @@
 
         nav a:hover {
             text-decoration: underline;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #f3f4f6;
+            padding: 6px;
+            object-fit: cover;
         }
 
         /* DASHBOARD */
@@ -88,6 +103,7 @@
             border-radius: 15px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
             margin-bottom: 35px;
+            overflow-x: auto;
         }
 
         table {
@@ -106,27 +122,82 @@
             color: #374151;
         }
 
-        td {
-            color: #4b5563;
-        }
-
         tr:not(:last-child) {
             border-bottom: 1px solid #e5e7eb;
         }
-         .logo-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 12px;
+
+        /* STATUS BADGES */
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
         }
 
-        .logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #f3f4f6;
-            padding: 8px;
+        .pending { background: #fef3c7; color: #92400e; }
+        .approved { background: #dcfce7; color: #166534; }
+        .banned { background: #fee2e2; color: #991b1b; }
+
+        /* ACTION BUTTONS */
+        .action-btn {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-right: 5px;
+            color: white;
         }
+
+        .accept { background: #22c55e; }
+        .reject { background: #ef4444; }
+        .ban { background: #f97316; }
+
+        .action-btn:hover {
+            opacity: 0.9;
+        }
+/*footer */
+.footer {
+    background: #1f2933;
+    color: #e5e7eb;
+    padding: 40px 30px 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.footer h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.footer p, 
+.footer a {
+    font-size: 14px;
+    color: #d1d5db;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.footer a:hover {
+    color: #3b82f6;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #374151;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+    
+
     </style>
 </head>
 
@@ -134,114 +205,171 @@
 
 <!-- NAVBAR -->
 <nav>
-    
- <div class="logo-container">
-            <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo">
-        </div>
-    <h2>Admin Panel</h2>
+    <div class="left">
+        <img src="/assets/dukan (1).png" class="logo">
+        <h2>Admin Panel</h2>
+    </div>
     <div>
-        <a href="home.html">Home</a>
         <a href="#">Reports</a>
         <a href="#">Settings</a>
-        <a href="admin-login.html">Logout</a>
+        <a href="Admin_login_page.html">Logout</a>
     </div>
 </nav>
 
 <!-- DASHBOARD -->
 <div class="dashboard">
 
-    <!-- SALES METRICS -->
+    <!-- SALES OVERVIEW -->
     <h3 class="section-title">Sales Overview</h3>
     <div class="cards">
-        <div class="card">
-            <h4>Total Sales</h4>
-            <p>Rs. 1,250,000</p>
-        </div>
-        <div class="card">
-            <h4>Monthly Sales</h4>
-            <p>Rs. 180,000</p>
-        </div>
-        <div class="card">
-            <h4>Today’s Sales</h4>
-            <p>Rs. 12,500</p>
-        </div>
+        <div class="card"><h4>Total Sales</h4><p>Rs. 1,250,000</p></div>
+        <div class="card"><h4>Monthly Sales</h4><p>Rs. 180,000</p></div>
+        <div class="card"><h4>Today's Sales</h4><p>Rs. 12,500</p></div>
     </div>
 
     <!-- USER STATISTICS -->
     <h3 class="section-title">User Statistics</h3>
     <div class="cards">
-        <div class="card">
-            <h4>Total Users</h4>
-            <p>540</p>
-        </div>
-        <div class="card">
-            <h4>Customers</h4>
-            <p>410</p>
-        </div>
-        <div class="card">
-            <h4>Sellers</h4>
-            <p>130</p>
-        </div>
-        <div class="card">
-            <h4>New Registrations</h4>
-            <p>15</p>
-        </div>
-    </div>
-
-    <!-- PERFORMANCE METRICS -->
-    <h3 class="section-title">System Performance</h3>
-    <div class="cards">
-        <div class="card">
-            <h4>Order Success Rate</h4>
-            <p>96%</p>
-        </div>
-        <div class="card">
-            <h4>Delivery Success</h4>
-            <p>94%</p>
-        </div>
-        <div class="card">
-            <h4>System Uptime</h4>
-            <p>99.8%</p>
-        </div>
-        <div class="card">
-            <h4>Avg. Processing Time</h4>
-            <p>1.8 hrs</p>
-        </div>
+        <div class="card"><h4>Total Users</h4><p>540</p></div>
+        <div class="card"><h4>Customers</h4><p>410</p></div>
+        <div class="card"><h4>Sellers</h4><p>130</p></div>
+        <div class="card"><h4>Pending Approvals</h4><p>15</p></div>
     </div>
 
     <!-- SYSTEM ACTIVITY -->
     <h3 class="section-title">Recent System Activity</h3>
     <div class="table-container">
         <table>
+            <tr><th>Activity</th><th>User</th><th>Date</th></tr>
+            <tr><td>New Order Placed</td><td>Ali Khan</td><td>10-10-2025</td></tr>
+            <tr><td>Seller Approved</td><td>Tech Store</td><td>10-10-2025</td></tr>
+            <tr><td>User Login</td><td>Sara Ahmed</td><td>09-10-2025</td></tr>
+        </table>
+    </div>
+
+    <!-- USER MANAGEMENT -->
+    <h3 class="section-title">User Management</h3>
+    <div class="table-container">
+        <table>
             <tr>
-                <th>Activity</th>
-                <th>User</th>
-                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Actions</th>
             </tr>
+
             <tr>
-                <td>New Order Placed</td>
                 <td>Ali Khan</td>
-                <td>10-10-2025</td>
+                <td>ali@seller.com</td>
+                <td>Seller</td>
+                <td><span class="badge pending">Pending</span></td>
+                <td>
+                    <button class="action-btn accept" onclick="updateStatus(this,'approved')">Accept</button>
+                    <button class="action-btn reject" onclick="updateStatus(this,'rejected')">Reject</button>
+                </td>
             </tr>
+
             <tr>
-                <td>Seller Approved</td>
-                <td>Tech Store</td>
-                <td>10-10-2025</td>
-            </tr>
-            <tr>
-                <td>Product Added</td>
-                <td>Mobile Hub</td>
-                <td>09-10-2025</td>
-            </tr>
-            <tr>
-                <td>User Login</td>
                 <td>Sara Ahmed</td>
-                <td>09-10-2025</td>
+                <td>sara@customer.com</td>
+                <td>Customer</td>
+                <td><span class="badge approved">Approved</span></td>
+                <td>
+                    <button class="action-btn ban" onclick="updateStatus(this,'banned')">Ban</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Tech Store</td>
+                <td>tech@seller.com</td>
+                <td>Seller</td>
+                <td><span class="badge banned">Banned</span></td>
+                <td>
+                    <button class="action-btn accept" onclick="updateStatus(this,'approved')">Unban</button>
+                </td>
             </tr>
         </table>
     </div>
 
+    <!--Footer -->
+    
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- ABOUT -->
+        <div>
+            <h3>E-Commerce Store</h3>
+            <p>
+               The E-Commerce Management System has been developed under <br>
+               the supervision of Sir Riaz Ahmed with the aim of enhancing user experience in online shopping and <br>
+                providing a reliable platform for product-based companies in Pakistan. <br>
+            </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div>
+            <h3>Quick Links</h3>
+            <p><a href="homepage.html">Home</a></p>
+            <p><a href="customer-dashboard.html">Dashboard</a></p>
+            <p><a href="">About Us</a></p>
+            <p><a href="#">Contact</a></p>
+        </div>
+
+        <!-- SUPPORT -->
+        <div>
+            <h3>Support</h3>
+            <p>FAQ</p>
+            <p>Return Policy</p>
+            <p>Shipping Information</p>
+            <p>Privacy Policy</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div>
+            <!-- CONTACT -->
+<div>
+    <h3>Support</h3>
+    <p>Email: <a href="mailto:abubakarorakzai15@gmail.com">abubakarorakzai15@gmail.com</a></p>
+    <p>Email: <a href="mailto:s2024266024@umt.edu.pk">s2024266024@umt.edu.pk</a></p>
+    
+    <p>Location: Lahore, Pakistan</p>
 </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 E-Commerce Store | University of Management and Technology  Project | All Rights Reserved
+    </div>
+</footer>
+
+
+
+
+
+</div>
+
+<script>
+function updateStatus(button, status) {
+    const row = button.closest("tr");
+    const statusCell = row.children[3];
+
+    if (status === "approved") {
+        statusCell.innerHTML = '<span class="badge approved">Approved</span>';
+        alert("User Approved");
+    }
+    else if (status === "rejected") {
+        row.remove();
+        alert("User Rejected");
+    }
+    else if (status === "banned") {
+        statusCell.innerHTML = '<span class="badge banned">Banned</span>';
+        alert("User Banned");
+    }
+}
+</script>
 
 </body>
 </html>

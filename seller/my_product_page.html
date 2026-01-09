@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Products | Seller Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: #f3f4f6;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: linear-gradient(135deg, #1f2933, #3b82f6);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav h2 {
+            font-size: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            padding: 6px;
+        }
+
+        /* PAGE */
+        .dashboard {
+            padding: 30px;
+        }
+
+        .section-title {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #1f2933;
+        }
+
+        /* TABLE */
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        th {
+            background: #e0ecff;
+            color: #1f3a8a;
+            font-weight: 600;
+        }
+
+        tr:not(:last-child) {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* BADGES */
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .active {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .out {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* BUTTONS */
+        .action-btn {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            color: white;
+            margin-right: 5px;
+        }
+
+        .edit {
+            background: #3b82f6;
+        }
+
+        .delete {
+            background: #ef4444;
+        }
+
+        .action-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+        <img src="/assets/dukan (1).png" class="logo">
+        <h2>Seller Panel</h2>
+    </div>
+    <div>
+        <a href="seller_dashboard.html">Dashboard</a>
+        <a href="my_product_page.html">My Products</a>
+        <a href="Orders.html">Orders</a>
+        <a href="seller_login_page.html">Logout</a>
+    </div>
+</nav>
+
+<!-- MY PRODUCTS -->
+<div class="dashboard">
+
+    <h3 class="section-title">My Products</h3>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+
+            <tr>
+                <td>PRD-101</td>
+                <td>Wireless Headphones</td>
+                <td>Electronics</td>
+                <td>Rs. 5,500</td>
+                <td>25</td>
+                <td><span class="badge active">Active</span></td>
+                <td>
+                    <button class="action-btn edit" onclick="editProduct()">Edit</button>
+                    <button class="action-btn delete" onclick="deleteProduct(this)">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>PRD-102</td>
+                <td>Smart Watch</td>
+                <td>Accessories</td>
+                <td>Rs. 8,200</td>
+                <td>0</td>
+                <td><span class="badge out">Out of Stock</span></td>
+                <td>
+                    <button class="action-btn edit" onclick="editProduct()">Edit</button>
+                    <button class="action-btn delete" onclick="deleteProduct(this)">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>PRD-103</td>
+                <td>Bluetooth Speaker</td>
+                <td>Electronics</td>
+                <td>Rs. 3,800</td>
+                <td>14</td>
+                <td><span class="badge active">Active</span></td>
+                <td>
+                    <button class="action-btn edit" onclick="editProduct()">Edit</button>
+                    <button class="action-btn delete" onclick="deleteProduct(this)">Delete</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
+
+<script>
+function editProduct() {
+    alert("Edit product functionality (frontend simulation)");
+}
+
+function deleteProduct(button) {
+    if (confirm("Are you sure you want to delete this product?")) {
+        button.closest("tr").remove();
+        alert("Product deleted successfully");
+    }
+}
+</script>
+
+</body>
+</html>

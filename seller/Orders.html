@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders | Seller Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: #f3f4f6;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: linear-gradient(135deg, #1f2933, #3b82f6);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav h2 {
+            font-size: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            padding: 6px;
+        }
+
+        /* PAGE */
+        .dashboard {
+            padding: 30px;
+        }
+
+        .section-title {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #1f2933;
+        }
+
+        /* TABLE */
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        th {
+            background: #e0ecff;
+            color: #1f3a8a;
+            font-weight: 600;
+        }
+
+        tr:not(:last-child) {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* STATUS BADGES */
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .processing {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .shipped {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .delivered {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .cancelled {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* BUTTONS */
+        .action-btn {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            color: white;
+            margin-right: 5px;
+        }
+
+        .ship {
+            background: #3b82f6;
+        }
+
+        .deliver {
+            background: #22c55e;
+        }
+
+        .cancel {
+            background: #ef4444;
+        }
+
+        .action-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+        <img src="/assets/dukan (1).png" class="logo">
+        <h2>Seller Panel</h2>
+    </div>
+    <div>
+        <a href="seller_dashboard.html">Dashboard</a>
+        <a href="my_product_page.html">My Products</a>
+        <a href="orders.html">Orders</a>
+        <a href="">Earnings</a>
+        <a href="seller_login_page.html">Logout</a>
+    </div>
+</nav>
+
+<!-- ORDERS PAGE -->
+<div class="dashboard">
+
+    <h3 class="section-title">Customer Orders</h3>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Payment</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+
+            <tr>
+                <td>ORD-701</td>
+                <td>Ali Khan</td>
+                <td>Wireless Headphones</td>
+                <td>1</td>
+                <td>Rs. 5,500</td>
+                <td>Paid</td>
+                <td><span class="badge processing">Processing</span></td>
+                <td>
+                    <button class="action-btn ship" onclick="updateStatus(this,'shipped')">Ship</button>
+                    <button class="action-btn cancel" onclick="updateStatus(this,'cancelled')">Cancel</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>ORD-702</td>
+                <td>Sara Ahmed</td>
+                <td>Smart Watch</td>
+                <td>2</td>
+                <td>Rs. 16,400</td>
+                <td>Paid</td>
+                <td><span class="badge shipped">Shipped</span></td>
+                <td>
+                    <button class="action-btn deliver" onclick="updateStatus(this,'delivered')">Deliver</button>
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+
+</div>
+
+<script>
+function updateStatus(button, status) {
+    const row = button.closest("tr");
+    const statusCell = row.children[6];
+
+    if (status === "shipped") {
+        statusCell.innerHTML = '<span class="badge shipped">Shipped</span>';
+        alert("Order marked as shipped");
+    }
+    else if (status === "delivered") {
+        statusCell.innerHTML = '<span class="badge delivered">Delivered</span>';
+        alert("Order marked as delivered");
+    }
+    else if (status === "cancelled") {
+        if (confirm("Are you sure you want to cancel this order?")) {
+            statusCell.innerHTML = '<span class="badge cancelled">Cancelled</span>';
+            alert("Order cancelled");
+        }
+    }
+}
+</script>
+
+</body>
+</html>
