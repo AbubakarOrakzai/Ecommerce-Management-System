@@ -50,6 +50,7 @@ if (isset($_GET['action']) && $_GET['action'] == "remove") {
         <a href="dashboard.php">Dashboard</a>
         <a href="shop.php">Shop</a>
         <a href="cart.php" style="font-weight: bold; text-decoration: underline;">Cart</a>
+        <a href="my_profile.php">My Profile</a>
         <a href="logout.php">Logout</a>
     </div>
 </nav>

@@ -14,7 +14,7 @@
         }
 
         body {
-            background-image: url('/assets/warehouse.jpg');
+            background-image: url('assets/warehouse.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -101,7 +101,7 @@
     <div class="container">
 
  <div class="logo-container">
-            <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo">
+            <img src="assets/dukan.png" alt="Dukan Logo" class="logo">
         </div>
 
         <h1>E-Commerce Management System</h1>

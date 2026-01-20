@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,7 +77,7 @@
             background: white;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* PROFILE */
@@ -114,7 +115,7 @@
             background: white;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             margin-bottom: 35px;
         }
 
@@ -123,7 +124,8 @@
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             font-size: 14px;
             text-align: left;
@@ -147,208 +149,208 @@
             cursor: pointer;
         }
 
-      /*footer css*/
-      .footer {
-    background: #1f2933;
-    color: #e5e7eb;
-    padding: 40px 30px 20px;
-    margin-top: 60px;
-}
+        /*footer css*/
+        .footer {
+            background: #1f2933;
+            color: #e5e7eb;
+            padding: 40px 30px 20px;
+            margin-top: 60px;
+        }
 
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-}
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
 
-.footer h3 {
-    margin-bottom: 12px;
-    font-size: 16px;
-    color: #ffffff;
-}
+        .footer h3 {
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #ffffff;
+        }
 
-.footer p, 
-.footer a {
-    font-size: 14px;
-    color: #d1d5db;
-    text-decoration: none;
-    line-height: 1.6;
-}
+        .footer p,
+        .footer a {
+            font-size: 14px;
+            color: #d1d5db;
+            text-decoration: none;
+            line-height: 1.6;
+        }
 
-.footer a:hover {
-    color: #3b82f6;
-}
+        .footer a:hover {
+            color: #3b82f6;
+        }
 
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid #374151;
-    margin-top: 30px;
-    padding-top: 15px;
-    font-size: 13px;
-    color: #9ca3af;
-}
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #374151;
+            margin-top: 30px;
+            padding-top: 15px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
     </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-    <div class="logo-container">
-        <img src="/assets/dukan (1).png" alt="Logo" class="logo">
-        <h2>Customer Dashboard</h2>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo-container">
+            <img src="../assets/dukan.png" alt="Logo" class="logo">
+            <h2>Customer Dashboard</h2>
+        </div>
+        <div>
+            <a href="homepage.html">Home</a>
+            <a href="About_us.html">About</a>
+            <a href="loginpage.html">Logout</a>
+        </div>
+    </nav>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard">
+
+        <!-- PROFILE -->
+        <h3 class="section-title">My Profile</h3>
+        <div class="cards">
+            <div class="card profile-card">
+
+                <div>
+                    <img id="profileImage" src="https://via.placeholder.com/150" class="profile-pic">
+
+                    <label class="upload-btn">
+                        Change Photo
+                        <input type="file" accept="image/*" onchange="loadProfilePic(event)">
+                    </label>
+                </div>
+
+                <div>
+                    <p><strong>Name:</strong> Ali Khan</p>
+                    <p><strong>Email:</strong> ali@gmail.com</p>
+                    <p><strong>Phone:</strong> 0301-1234567</p>
+                    <p><strong>Address:</strong> Lahore</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RECENT ORDERS -->
+        <h3 class="section-title">Recent Orders</h3>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>ORD-201</td>
+                    <td>05-10-2025</td>
+                    <td>Delivered</td>
+                    <td>Rs. 4,500</td>
+                    <td><button class="view-btn">View</button></td>
+                </tr>
+                <tr>
+                    <td>ORD-202</td>
+                    <td>08-10-2025</td>
+                    <td>Shipped</td>
+                    <td>Rs. 6,200</td>
+                    <td><button class="view-btn">View</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- NOTIFICATIONS -->
+        <h3 class="section-title">Notifications</h3>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Message</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>Your order ORD-202 has been shipped</td>
+                    <td>08-10-2025</td>
+                </tr>
+                <tr>
+                    <td>Order ORD-201 delivered successfully</td>
+                    <td>06-10-2025</td>
+                </tr>
+                <tr>
+                    <td>New discount available on electronics</td>
+                    <td>04-10-2025</td>
+                </tr>
+            </table>
+        </div>
+
     </div>
-    <div>
-        <a href="homepage.html">Home</a>
-        <a href="About_us.html">About</a>
-        <a href="loginpage.html">Logout</a>
-    </div>
-</nav>
 
-<!-- DASHBOARD -->
-<div class="dashboard">
+    <!--Footer -->
+    <footer class="footer">
+        <div class="footer-container">
 
-    <!-- PROFILE -->
-    <h3 class="section-title">My Profile</h3>
-    <div class="cards">
-        <div class="card profile-card">
-
+            <!-- ABOUT -->
             <div>
-                <img id="profileImage"
-                     src="https://via.placeholder.com/150"
-                     class="profile-pic">
-
-                <label class="upload-btn">
-                    Change Photo
-                    <input type="file" accept="image/*" onchange="loadProfilePic(event)">
-                </label>
+                <h3>E-Commerce Store</h3>
+                <p>
+                    The E-Commerce Management System has been developed under <br>
+                    the supervision of Sir Riaz Ahmed with the aim of enhancing user experience in online shopping and
+                    <br>
+                    providing a reliable platform for product-based companies in Pakistan. <br>
+                </p>
             </div>
 
+            <!-- QUICK LINKS -->
             <div>
-                <p><strong>Name:</strong> Ali Khan</p>
-                <p><strong>Email:</strong> ali@gmail.com</p>
-                <p><strong>Phone:</strong> 0301-1234567</p>
-                <p><strong>Address:</strong> Lahore</p>
+                <h3>Quick Links</h3>
+                <p><a href="homepage.html">Home</a></p>
+                <p><a href="customer-dashboard.html">Dashboard</a></p>
+                <p><a href="">About Us</a></p>
+                <p><a href="#">Contact</a></p>
             </div>
 
-        </div>
-    </div>
+            <!-- SUPPORT -->
+            <div>
+                <h3>Support</h3>
+                <p>FAQ</p>
+                <p>Return Policy</p>
+                <p>Shipping Information</p>
+                <p>Privacy Policy</p>
+            </div>
 
-    <!-- RECENT ORDERS -->
-    <h3 class="section-title">Recent Orders</h3>
-    <div class="table-container">
-        <table>
-            <tr>
-                <th>Order ID</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Total</th>
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td>ORD-201</td>
-                <td>05-10-2025</td>
-                <td>Delivered</td>
-                <td>Rs. 4,500</td>
-                <td><button class="view-btn">View</button></td>
-            </tr>
-            <tr>
-                <td>ORD-202</td>
-                <td>08-10-2025</td>
-                <td>Shipped</td>
-                <td>Rs. 6,200</td>
-                <td><button class="view-btn">View</button></td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- NOTIFICATIONS -->
-    <h3 class="section-title">Notifications</h3>
-    <div class="table-container">
-        <table>
-            <tr>
-                <th>Message</th>
-                <th>Date</th>
-            </tr>
-            <tr>
-                <td>Your order ORD-202 has been shipped</td>
-                <td>08-10-2025</td>
-            </tr>
-            <tr>
-                <td>Order ORD-201 delivered successfully</td>
-                <td>06-10-2025</td>
-            </tr>
-            <tr>
-                <td>New discount available on electronics</td>
-                <td>04-10-2025</td>
-            </tr>
-        </table>
-    </div>
-
-</div>
-
-<!--Footer -->
-<footer class="footer">
-    <div class="footer-container">
-
-        <!-- ABOUT -->
-        <div>
-            <h3>E-Commerce Store</h3>
-            <p>
-               The E-Commerce Management System has been developed under <br>
-               the supervision of Sir Riaz Ahmed with the aim of enhancing user experience in online shopping and <br>
-                providing a reliable platform for product-based companies in Pakistan. <br>
-            </p>
-        </div>
-
-        <!-- QUICK LINKS -->
-        <div>
-            <h3>Quick Links</h3>
-            <p><a href="homepage.html">Home</a></p>
-            <p><a href="customer-dashboard.html">Dashboard</a></p>
-            <p><a href="">About Us</a></p>
-            <p><a href="#">Contact</a></p>
-        </div>
-
-        <!-- SUPPORT -->
-        <div>
-            <h3>Support</h3>
-            <p>FAQ</p>
-            <p>Return Policy</p>
-            <p>Shipping Information</p>
-            <p>Privacy Policy</p>
-        </div>
-
-        <!-- CONTACT -->
-        <div>
             <!-- CONTACT -->
-<div>
-    <h3>Support</h3>
-    <p>Email: <a href="mailto:abubakarorakzai15@gmail.com">abubakarorakzai15@gmail.com</a></p>
-    <p>Email: <a href="mailto:s2024266024@umt.edu.pk">s2024266024@umt.edu.pk</a></p>
-    
-    <p>Location: Lahore, Pakistan</p>
-</div>
+            <div>
+                <!-- CONTACT -->
+                <div>
+                    <h3>Support</h3>
+                    <p>Email: <a href="mailto:abubakarorakzai15@gmail.com">abubakarorakzai15@gmail.com</a></p>
+                    <p>Email: <a href="mailto:s2024266024@umt.edu.pk">s2024266024@umt.edu.pk</a></p>
+
+                    <p>Location: Lahore, Pakistan</p>
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-
-    <div class="footer-bottom">
-        © 2026 E-Commerce Store | University of Management and Technology  Project | All Rights Reserved
-    </div>
-</footer>
+        <div class="footer-bottom">
+            © 2026 E-Commerce Store | University of Management and Technology Project | All Rights Reserved
+        </div>
+    </footer>
 
 
 
 
 
-<script>
-    function loadProfilePic(event) {
-        document.getElementById("profileImage").src =
-            URL.createObjectURL(event.target.files[0]);
-    }
-</script>
+    <script>
+        function loadProfilePic(event) {
+            document.getElementById("profileImage").src =
+                URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
 
 </body>
+
 </html>

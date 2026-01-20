@@ -45,6 +45,7 @@ $result = mysqli_query($conn, $sql);
         <a href="shop.php">Shop</a>
         <a href="cart.php">Cart</a>
         <a href="check_orders.php" style="font-weight: bold; text-decoration: underline;">My Orders</a>
+        <a href="my_profile.php">My Profile</a>
         <a href="logout.php">Logout</a>
     </div>
 </nav>
@@ -57,7 +58,7 @@ $result = mysqli_query($conn, $sql);
             <th>Date</th>
             <th>Total Amount</th>
             <th>Status</th>
-            <!-- <th>Action</th> -->
+            <th>Action</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <tr>
@@ -65,6 +66,13 @@ $result = mysqli_query($conn, $sql);
             <td><?php echo date("d-m-Y H:i", strtotime($row['created_at'])); ?></td>
             <td>Rs. <?php echo number_format($row['total_amount']); ?></td>
             <td><span class="status <?php echo $row['status']; ?>"><?php echo $row['status']; ?></span></td>
+            <td>
+                <?php if ($row['status'] == 'Pending') { ?>
+                    <a href="cancel_order.php?id=<?php echo $row['id']; ?>" class="status Pending" style="text-decoration: none; cursor: pointer; background: #ef4444; color: white;" onclick="return confirm('Are you sure you want to cancel this order?')">Cancel</a>
+                <?php } else { ?>
+                    <span style="color: #999;">-</span>
+                <?php } ?>
+            </td>
         </tr>
         <?php } ?>
     </table>

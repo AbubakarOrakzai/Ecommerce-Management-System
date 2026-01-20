@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,7 +67,7 @@
             background: white;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         .card h4 {
@@ -86,7 +87,7 @@
             background: white;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         table {
@@ -94,7 +95,8 @@
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             text-align: left;
             font-size: 14px;
@@ -113,7 +115,8 @@
         tr:not(:last-child) {
             border-bottom: 1px solid #e5e7eb;
         }
-         .logo-container {
+
+        .logo-container {
             display: flex;
             justify-content: center;
             margin-bottom: 12px;
@@ -129,222 +132,223 @@
         }
 
         /* footer css*/
-        
-.footer {
-    background: #1f2933;
-    color: #e5e7eb;
-    padding: 40px 30px 20px;
-    margin-top: 60px;
-}
 
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-}
+        .footer {
+            background: #1f2933;
+            color: #e5e7eb;
+            padding: 40px 30px 20px;
+            margin-top: 60px;
+        }
 
-.footer h3 {
-    margin-bottom: 12px;
-    font-size: 16px;
-    color: #ffffff;
-}
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
 
-.footer p, 
-.footer a {
-    font-size: 14px;
-    color: #d1d5db;
-    text-decoration: none;
-    line-height: 1.6;
-}
+        .footer h3 {
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #ffffff;
+        }
 
-.footer a:hover {
-    color: #3b82f6;
-}
+        .footer p,
+        .footer a {
+            font-size: 14px;
+            color: #d1d5db;
+            text-decoration: none;
+            line-height: 1.6;
+        }
 
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid #374151;
-    margin-top: 30px;
-    padding-top: 15px;
-    font-size: 13px;
-    color: #9ca3af;
-}
-    
+        .footer a:hover {
+            color: #3b82f6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #374151;
+            margin-top: 30px;
+            padding-top: 15px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
     </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-    
- <div class="logo-container">
-            <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo">
-        </div>
-    <h2>Seller Panel</h2>
-    <div>
-        <a href="home.html">Home</a>
-        <a href="#">My Products</a>
-        <a href="#">Orders</a>
-        <a href="#">Earnings</a>
-        <a href="seller-login.html">Logout</a>
-    </div>
-</nav>
+    <!-- NAVBAR -->
+    <nav>
 
-<!-- DASHBOARD -->
-<div class="dashboard">
-
-    <!-- EARNINGS -->
-    <h3 class="section-title">Earnings Overview</h3>
-    <div class="cards">
-        <div class="card">
-            <h4>Total Earnings</h4>
-            <p>Rs. 420,000</p>
+        <div class="logo-container">
+            <img src="../assets/dukan.png" alt="Dukan Logo" class="logo">
         </div>
-        <div class="card">
-            <h4>Monthly Earnings</h4>
-            <p>Rs. 52,000</p>
-        </div>
-        <div class="card">
-            <h4>Today’s Earnings</h4>
-            <p>Rs. 3,200</p>
-        </div>
-        <div class="card">
-            <h4>Pending Payout</h4>
-            <p>Rs. 8,500</p>
-        </div>
-    </div>
-
-    <!-- SALES STATISTICS -->
-    <h3 class="section-title">Sales Statistics</h3>
-    <div class="cards">
-        <div class="card">
-            <h4>Total Orders</h4>
-            <p>890</p>
-        </div>
-        <div class="card">
-            <h4>Completed Orders</h4>
-            <p>820</p>
-        </div>
-        <div class="card">
-            <h4>Pending Orders</h4>
-            <p>45</p>
-        </div>
-        <div class="card">
-            <h4>Returned Orders</h4>
-            <p>25</p>
-        </div>
-    </div>
-
-    <!-- PRODUCT PERFORMANCE -->
-    <h3 class="section-title">Product Performance</h3>
-    <div class="cards">
-        <div class="card">
-            <h4>Total Products</h4>
-            <p>58</p>
-        </div>
-        <div class="card">
-            <h4>Best Selling Product</h4>
-            <p>Wireless Headphones</p>
-        </div>
-        <div class="card">
-            <h4>Low Stock Items</h4>
-            <p>6</p>
-        </div>
-        <div class="card">
-            <h4>Average Rating</h4>
-            <p>4.5 ★</p>
-        </div>
-    </div>
-
-    <!-- RECENT ORDERS -->
-    <h3 class="section-title">Recent Orders</h3>
-    <div class="table-container">
-        <table>
-            <tr>
-                <th>Order ID</th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Status</th>
-                <th>Payment</th>
-            </tr>
-            <tr>
-                <td>ORD-501</td>
-                <td>Smart Watch</td>
-                <td>2</td>
-                <td>Shipped</td>
-                <td>Paid</td>
-            </tr>
-            <tr>
-                <td>ORD-502</td>
-                <td>Wireless Earbuds</td>
-                <td>1</td>
-                <td>Delivered</td>
-                <td>Paid</td>
-            </tr>
-            <tr>
-                <td>ORD-503</td>
-                <td>Mobile Phone</td>
-                <td>1</td>
-                <td>Pending</td>
-                <td>COD</td>
-            </tr>
-        </table>
-    </div>
-
-</div>
-<!--Footer -->
-<footer class="footer">
-    <div class="footer-container">
-
-        <!-- ABOUT -->
+        <h2>Seller Panel</h2>
         <div>
-            <h3>E-Commerce Store</h3>
-            <p>
-               The E-Commerce Management System has been developed under <br>
-               the supervision of Sir Riaz Ahmed with the aim of enhancing user experience in online shopping and <br>
-                providing a reliable platform for product-based companies in Pakistan. <br>
-            </p>
+            <a href="home.html">Home</a>
+            <a href="#">My Products</a>
+            <a href="#">Orders</a>
+            <a href="#">Earnings</a>
+            <a href="seller-login.html">Logout</a>
+        </div>
+    </nav>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard">
+
+        <!-- EARNINGS -->
+        <h3 class="section-title">Earnings Overview</h3>
+        <div class="cards">
+            <div class="card">
+                <h4>Total Earnings</h4>
+                <p>Rs. 420,000</p>
+            </div>
+            <div class="card">
+                <h4>Monthly Earnings</h4>
+                <p>Rs. 52,000</p>
+            </div>
+            <div class="card">
+                <h4>Today’s Earnings</h4>
+                <p>Rs. 3,200</p>
+            </div>
+            <div class="card">
+                <h4>Pending Payout</h4>
+                <p>Rs. 8,500</p>
+            </div>
         </div>
 
-        <!-- QUICK LINKS -->
-        <div>
-            <h3>Quick Links</h3>
-            <p><a href="homepage.html">Home</a></p>
-            <p><a href="customer-dashboard.html">Dashboard</a></p>
-            <p><a href="">About Us</a></p>
-            <p><a href="#">Contact</a></p>
+        <!-- SALES STATISTICS -->
+        <h3 class="section-title">Sales Statistics</h3>
+        <div class="cards">
+            <div class="card">
+                <h4>Total Orders</h4>
+                <p>890</p>
+            </div>
+            <div class="card">
+                <h4>Completed Orders</h4>
+                <p>820</p>
+            </div>
+            <div class="card">
+                <h4>Pending Orders</h4>
+                <p>45</p>
+            </div>
+            <div class="card">
+                <h4>Returned Orders</h4>
+                <p>25</p>
+            </div>
         </div>
 
-        <!-- SUPPORT -->
-        <div>
-            <h3>Support</h3>
-            <p>FAQ</p>
-            <p>Return Policy</p>
-            <p>Shipping Information</p>
-            <p>Privacy Policy</p>
+        <!-- PRODUCT PERFORMANCE -->
+        <h3 class="section-title">Product Performance</h3>
+        <div class="cards">
+            <div class="card">
+                <h4>Total Products</h4>
+                <p>58</p>
+            </div>
+            <div class="card">
+                <h4>Best Selling Product</h4>
+                <p>Wireless Headphones</p>
+            </div>
+            <div class="card">
+                <h4>Low Stock Items</h4>
+                <p>6</p>
+            </div>
+            <div class="card">
+                <h4>Average Rating</h4>
+                <p>4.5 ★</p>
+            </div>
         </div>
 
-        <!-- CONTACT -->
-        <div>
+        <!-- RECENT ORDERS -->
+        <h3 class="section-title">Recent Orders</h3>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                </tr>
+                <tr>
+                    <td>ORD-501</td>
+                    <td>Smart Watch</td>
+                    <td>2</td>
+                    <td>Shipped</td>
+                    <td>Paid</td>
+                </tr>
+                <tr>
+                    <td>ORD-502</td>
+                    <td>Wireless Earbuds</td>
+                    <td>1</td>
+                    <td>Delivered</td>
+                    <td>Paid</td>
+                </tr>
+                <tr>
+                    <td>ORD-503</td>
+                    <td>Mobile Phone</td>
+                    <td>1</td>
+                    <td>Pending</td>
+                    <td>COD</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <!--Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- ABOUT -->
+            <div>
+                <h3>E-Commerce Store</h3>
+                <p>
+                    The E-Commerce Management System has been developed under <br>
+                    the supervision of Sir Riaz Ahmed with the aim of enhancing user experience in online shopping and
+                    <br>
+                    providing a reliable platform for product-based companies in Pakistan. <br>
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="homepage.html">Home</a></p>
+                <p><a href="customer-dashboard.html">Dashboard</a></p>
+                <p><a href="">About Us</a></p>
+                <p><a href="#">Contact</a></p>
+            </div>
+
+            <!-- SUPPORT -->
+            <div>
+                <h3>Support</h3>
+                <p>FAQ</p>
+                <p>Return Policy</p>
+                <p>Shipping Information</p>
+                <p>Privacy Policy</p>
+            </div>
+
             <!-- CONTACT -->
-<div>
-    <h3>Support</h3>
-    <p>Email: <a href="mailto:abubakarorakzai15@gmail.com">abubakarorakzai15@gmail.com</a></p>
-    <p>Email: <a href="mailto:s2024266024@umt.edu.pk">s2024266024@umt.edu.pk</a></p>
-    
-    <p>Location: Lahore, Pakistan</p>
-</div>
+            <div>
+                <!-- CONTACT -->
+                <div>
+                    <h3>Support</h3>
+                    <p>Email: <a href="mailto:abubakarorakzai15@gmail.com">abubakarorakzai15@gmail.com</a></p>
+                    <p>Email: <a href="mailto:s2024266024@umt.edu.pk">s2024266024@umt.edu.pk</a></p>
+
+                    <p>Location: Lahore, Pakistan</p>
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-
-    <div class="footer-bottom">
-        © 2026 E-Commerce Store | University of Management and Technology  Project | All Rights Reserved
-    </div>
-</footer>
+        <div class="footer-bottom">
+            © 2026 E-Commerce Store | University of Management and Technology Project | All Rights Reserved
+        </div>
+    </footer>
 
 
 </body>
+
 </html>

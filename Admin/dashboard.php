@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 'admin') {
         /* Copied Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
         body { background: #f3f4f6; }
-        nav { background: linear-gradient(135deg, #1f2933, #ef4444); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; color: white; }
+        nav { background: linear-gradient(135deg, #1f2933, #3b82f6); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; color: white; }
         nav h2 { font-size: 20px; }
         nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 14px; font-weight: 500; }
         nav a:hover { text-decoration: underline; }
@@ -43,7 +43,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 'admin') {
 
 <nav>
     <div class="logo-container">
-        <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo" style="width: 50px; height: 50px;">
+        <img src="../assets/dukan.png" alt="Dukan Logo" class="logo" style="width: 50px; height: 50px;">
     </div>
     <h2>Admin Panel - <?php echo $user_name; ?></h2>
     <div>

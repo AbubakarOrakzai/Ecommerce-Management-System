@@ -54,6 +54,7 @@ $result = mysqli_query($conn, $sql);
     <div>
         <a href="dashboard.php">Dashboard</a>
         <a href="add_product.php">Add Product</a>
+        <a href="my_profile.php">My Profile</a>
         <a href="logout.php">Logout</a>
     </div>
 </nav>

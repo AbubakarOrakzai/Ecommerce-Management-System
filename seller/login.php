@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         /* Copied and adapted styles */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
-        body { background-image: url('/assets/warehouse.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        body { background-image: url('../assets/warehouse.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
         .login-container { background: #ffffff; width: 100%; max-width: 380px; padding: 35px 30px; border-radius: 18px; box-shadow: 0 15px 35px rgba(0,0,0,0.25); }
         .logo-container { display: flex; justify-content: center; margin-bottom: 12px; }
         .logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; background: #f3f4f6; padding: 8px; }
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="login-container">
         <div class="logo-container">
-            <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo">
+            <img src="../assets/dukan.png" alt="Dukan Logo" class="logo">
         </div>
         <h2>Seller Login</h2>
         <p>Login to manage your store</p>

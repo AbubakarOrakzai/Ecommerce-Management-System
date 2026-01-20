@@ -113,6 +113,7 @@ $result = mysqli_query($conn, $sql);
         <a href="dashboard.php">Dashboard</a>
         <a href="shop.php" style="font-weight: bold; text-decoration: underline;">Shop</a>
         <a href="cart.php">Cart (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)</a>
+        <a href="my_profile.php">My Profile</a>
         <a href="logout.php">Logout</a>
     </div>
 </nav>

@@ -35,8 +35,7 @@ $user = mysqli_fetch_assoc($result);
         .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
         .profile-card { display: flex; gap: 20px; align-items: center; }
         .profile-pic { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid #3b82f6; }
-        .upload-btn { display: inline-block; margin-top: 8px; background: #3b82f6; color: white; padding: 6px 12px; border-radius: 6px; font-size: 13px; cursor: pointer; }
-        input[type="file"] { display: none; }
+
         .table-container { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); margin-bottom: 35px; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 12px; font-size: 14px; text-align: left; }
@@ -55,13 +54,14 @@ $user = mysqli_fetch_assoc($result);
 
 <nav>
     <div class="logo-container">
-        <img src="/assets/dukan (1).png" alt="Logo" class="logo">
+        <img src="../assets/dukan.png" alt="Logo" class="logo">
         <h2>Customer Dashboard</h2>
     </div>
     <div>
         <a href="../index.php">Home</a>
         <a href="shop.php">Shop</a>
         <a href="check_orders.php">My Orders</a>
+        <a href="my_profile.php">My Profile</a>
         <a href="logout.php">Logout</a>
     </div>
 </nav>
@@ -80,13 +80,17 @@ $user = mysqli_fetch_assoc($result);
     <div class="cards">
         <div class="card profile-card">
             <div>
-                <img id="profileImage" src="https://via.placeholder.com/150" class="profile-pic">
+                <?php 
+                    $profile_src = !empty($user['profile_pic']) ? "../" . $user['profile_pic'] : "https://via.placeholder.com/150";
+                ?>
+                <img id="profileImage" src="<?php echo $profile_src; ?>" class="profile-pic">
             </div>
             <div>
                 <p><strong>Name:</strong> <?php echo $user['full_name']; ?></p>
                 <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
                 <p><strong>Phone:</strong> <?php echo $user['phone']; ?></p>
                 <p><strong>Address:</strong> <?php echo $user['address']; ?></p>
+                <a href="my_profile.php" class="upload-btn" style="text-decoration: none;">Edit Profile</a>
             </div>
         </div>
     </div>
@@ -97,6 +101,7 @@ $user = mysqli_fetch_assoc($result);
         <table>
             <tr>
                 <th>Order ID</th>
+                <th>Items</th>
                 <th>Date</th>
                 <th>Status</th>
                 <th>Total</th>
@@ -111,15 +116,34 @@ $user = mysqli_fetch_assoc($result);
             ?>
             <tr>
                 <td>#<?php echo $order['id']; ?></td>
+                <td>
+                    <?php 
+                    $oid = $order['id'];
+                    $items_sql = "SELECT p.name, p.image FROM order_items oi JOIN products p ON oi.product_id = p.id WHERE oi.order_id = '$oid'";
+                    $items_result = mysqli_query($conn, $items_sql);
+                    while ($item = mysqli_fetch_assoc($items_result)) {
+                        $img_src = !empty($item['image']) ? "../" . $item['image'] : "https://via.placeholder.com/50";
+                        echo "<div style='display: flex; align-items: center; gap: 8px; margin-bottom: 4px;'>";
+                        echo "<img src='$img_src' style='width: 40px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd;'>";
+                        echo "<span style='font-size: 13px;'>" . htmlspecialchars($item['name']) . "</span>";
+                        echo "</div>";
+                    }
+                    ?>
+                </td>
                 <td><?php echo date("d-m-Y", strtotime($order['created_at'])); ?></td>
                 <td><span style="padding: 4px 8px; border-radius: 4px; background: <?php echo $order['status'] == 'Pending' ? '#fef3c7' : '#dcfce7'; ?>; color: <?php echo $order['status'] == 'Pending' ? '#d97706' : '#166534'; ?>; font-size: 12px; font-weight: bold;"><?php echo $order['status']; ?></span></td>
                 <td>Rs. <?php echo number_format($order['total_amount']); ?></td>
-                <td><button class="view-btn" onclick="window.location.href='check_orders.php'">View</button></td>
+                <td>
+                    <button class="view-btn" onclick="window.location.href='check_orders.php'">View</button>
+                    <?php if ($order['status'] == 'Pending') { ?>
+                        <a href="cancel_order.php?id=<?php echo $order['id']; ?>" class="view-btn" style="background: #ef4444; text-decoration: none; display: inline-block; text-align: center; margin-left: 5px;" onclick="return confirm('Are you sure you want to cancel this order?')">Cancel</a>
+                    <?php } ?>
+                </td>
             </tr>
             <?php 
                 }
             } else {
-                echo "<tr><td colspan='5' style='text-align:center;'>No orders yet.</td></tr>";
+                echo "<tr><td colspan='6' style='text-align:center;'>No orders yet.</td></tr>";
             }
             ?>
         </table>

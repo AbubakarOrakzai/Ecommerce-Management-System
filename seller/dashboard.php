@@ -89,13 +89,14 @@ $recent_orders_result = mysqli_query($conn, $recent_orders_sql);
 
 <nav>
     <div class="logo-container">
-        <img src="/assets/dukan (1).png" alt="Dukan Logo" class="logo" style="width: 50px; height: 50px;">
+        <img src="../assets/dukan.png" alt="Dukan Logo" class="logo" style="width: 50px; height: 50px;">
     </div>
     <h2>Seller Panel - <?php echo $user_name; ?></h2>
     <div>
         <a href="../index.php">Home</a>
         <a href="view_products.php">My Products</a>
         <a href="add_product.php">Add Product</a>
+        <a href="my_profile.php">My Profile</a>
         <a href="report.php">Generate Report</a>
         <a href="logout.php">Logout</a>
     </div>
