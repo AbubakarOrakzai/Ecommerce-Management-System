@@ -39,4 +39,4 @@ This is a fully functional E-Commerce backend built with core PHP (Procedural) a
 ## Technologies Used
 - HTML/CSS (Frontend)
 - PHP (Backend)
-- MySQL (Database)
+- MySQL (Database).
